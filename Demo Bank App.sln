@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo Bank App", "Demo Bank App\Demo Bank App.csproj", "{875910B1-B888-46C6-9296-545977DC68B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoBankLibrary", "DemoBankLibrary\DemoBankLibrary.csproj", "{0DC65861-4EAF-41B5-9453-B7A900CEEB90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoBankLibrary", "DemoBankLibrary\DemoBankLibrary.csproj", "{0DC65861-4EAF-41B5-9453-B7A900CEEB90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoBankLibraryTests", "DemoBankLibraryTest\DemoBankLibraryTests.csproj", "{C250757D-8559-408C-ABAD-5C3A284BB927}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{0DC65861-4EAF-41B5-9453-B7A900CEEB90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DC65861-4EAF-41B5-9453-B7A900CEEB90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DC65861-4EAF-41B5-9453-B7A900CEEB90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C250757D-8559-408C-ABAD-5C3A284BB927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C250757D-8559-408C-ABAD-5C3A284BB927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C250757D-8559-408C-ABAD-5C3A284BB927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C250757D-8559-408C-ABAD-5C3A284BB927}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

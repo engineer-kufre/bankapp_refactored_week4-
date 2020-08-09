@@ -70,7 +70,7 @@ namespace Demo_Bank_App
                         }
                     }
                     //customer signup method call
-                    Console.WriteLine(CustomerSignup(fullName, email, password));
+                    AuthenticationClass.CustomerSignup(fullName, email, password);
                 }
 
                 //LOGIN SECTION
@@ -89,20 +89,6 @@ namespace Demo_Bank_App
                     CustomerLoggedInActivity(ref correctSelection, ref activeCustomer);
                 }
             }
-        }
-
-        //customer signup method
-        private static bool CustomerSignup(string fullName, string email, string password)
-        {
-            bool isSignedUp = false;
-
-            Customer customer = new Customer(fullName, password, email);
-            Bank.customerProfiles.Add(customer);
-            if (customer != null)
-            {
-                isSignedUp = true;
-            }
-            return isSignedUp;
         }
 
         //all actions a user can take while logged in
@@ -187,27 +173,13 @@ namespace Demo_Bank_App
                 string logInPassword = Console.ReadLine();
 
                 //authenticate login details
-                activeCustomer = LoginAuth(logInEmail, logInPassword);
+                activeCustomer = AuthenticationClass.LoginAuth(logInEmail, logInPassword);
 
                 if (activeCustomer == null)
                 {
                     Console.WriteLine("Incorrect email or password");
                 }
             }
-        }
-
-        //method for authenticating login details
-        private static Customer LoginAuth(string logInEmail, string logInPassword)
-        {
-            Customer customer = null;
-            foreach (var item in Bank.customerProfiles)
-            {
-                if (item.Email == logInEmail && item.Password == logInPassword)
-                {
-                    customer = item;
-                }
-            }
-            return customer;
         }
     }
 }
