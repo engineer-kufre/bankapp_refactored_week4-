@@ -1,0 +1,29 @@
+C:\Users\Kufreabasi Ita\Desktop\Projects\Demo Bank App\Demo Bank App\bin\Debug\netcoreapp3.1\Demo Bank App.exe
+C:\Users\Kufreabasi Ita\Desktop\Projects\Demo Bank App\Demo Bank App\bin\Debug\netcoreapp3.1\Demo Bank App.deps.json
+C:\Users\Kufreabasi Ita\Desktop\Projects\Demo Bank App\Demo Bank App\bin\Debug\netcoreapp3.1\Demo Bank App.runtimeconfig.json
+C:\Users\Kufreabasi Ita\Desktop\Projects\Demo Bank App\Demo Bank App\bin\Debug\netcoreapp3.1\Demo Bank App.runtimeconfig.dev.json
+C:\Users\Kufreabasi Ita\Desktop\Projects\Demo Bank App\Demo Bank App\bin\Debug\netcoreapp3.1\Demo Bank App.dll
+C:\Users\Kufreabasi Ita\Desktop\Projects\Demo Bank App\Demo Bank App\bin\Debug\netcoreapp3.1\Demo Bank App.pdb
+C:\Users\Kufreabasi Ita\Desktop\Projects\Demo Bank App\Demo Bank App\obj\Debug\netcoreapp3.1\Demo Bank App.csprojAssemblyReference.cache
+C:\Users\Kufreabasi Ita\Desktop\Projects\Demo Bank App\Demo Bank App\obj\Debug\netcoreapp3.1\Demo Bank App.AssemblyInfoInputs.cache
+C:\Users\Kufreabasi Ita\Desktop\Projects\Demo Bank App\Demo Bank App\obj\Debug\netcoreapp3.1\Demo Bank App.AssemblyInfo.cs
+C:\Users\Kufreabasi Ita\Desktop\Projects\Demo Bank App\Demo Bank App\obj\Debug\netcoreapp3.1\Demo Bank App.csproj.CoreCompileInputs.cache
+C:\Users\Kufreabasi Ita\Desktop\Projects\Demo Bank App\Demo Bank App\obj\Debug\netcoreapp3.1\Demo Bank App.dll
+C:\Users\Kufreabasi Ita\Desktop\Projects\Demo Bank App\Demo Bank App\obj\Debug\netcoreapp3.1\Demo Bank App.pdb
+C:\Users\Kufreabasi Ita\Desktop\Projects\Demo Bank App\Demo Bank App\obj\Debug\netcoreapp3.1\Demo Bank App.genruntimeconfig.cache
+C:\Users\Kufreabasi Ita\Desktop\Coding\demo-banking-app\Demo Bank App\Demo Bank App\obj\Debug\netcoreapp3.1\Demo Bank App.csprojAssemblyReference.cache
+C:\Users\Kufreabasi Ita\Desktop\Coding\demo-banking-app\Demo Bank App\Demo Bank App\obj\Debug\netcoreapp3.1\Demo Bank App.AssemblyInfoInputs.cache
+C:\Users\Kufreabasi Ita\Desktop\Coding\demo-banking-app\Demo Bank App\Demo Bank App\obj\Debug\netcoreapp3.1\Demo Bank App.AssemblyInfo.cs
+C:\Users\Kufreabasi Ita\Desktop\Coding\demo-banking-app\Demo Bank App\Demo Bank App\obj\Debug\netcoreapp3.1\Demo Bank App.csproj.CoreCompileInputs.cache
+C:\Users\Kufreabasi Ita\Desktop\Coding\demo-banking-app\Demo Bank App\Demo Bank App\obj\Debug\netcoreapp3.1\Demo Bank App.dll
+C:\Users\Kufreabasi Ita\Desktop\Coding\demo-banking-app\Demo Bank App\Demo Bank App\obj\Debug\netcoreapp3.1\Demo Bank App.pdb
+C:\Users\Kufreabasi Ita\Desktop\Coding\demo-banking-app\Demo Bank App\Demo Bank App\bin\Debug\netcoreapp3.1\Demo Bank App.exe
+C:\Users\Kufreabasi Ita\Desktop\Coding\demo-banking-app\Demo Bank App\Demo Bank App\bin\Debug\netcoreapp3.1\Demo Bank App.deps.json
+C:\Users\Kufreabasi Ita\Desktop\Coding\demo-banking-app\Demo Bank App\Demo Bank App\bin\Debug\netcoreapp3.1\Demo Bank App.runtimeconfig.json
+C:\Users\Kufreabasi Ita\Desktop\Coding\demo-banking-app\Demo Bank App\Demo Bank App\bin\Debug\netcoreapp3.1\Demo Bank App.runtimeconfig.dev.json
+C:\Users\Kufreabasi Ita\Desktop\Coding\demo-banking-app\Demo Bank App\Demo Bank App\bin\Debug\netcoreapp3.1\Demo Bank App.dll
+C:\Users\Kufreabasi Ita\Desktop\Coding\demo-banking-app\Demo Bank App\Demo Bank App\bin\Debug\netcoreapp3.1\Demo Bank App.pdb
+C:\Users\Kufreabasi Ita\Desktop\Coding\demo-banking-app\Demo Bank App\Demo Bank App\obj\Debug\netcoreapp3.1\Demo Bank App.genruntimeconfig.cache
+C:\Users\Kufreabasi Ita\Desktop\Coding\demo-banking-app\Demo Bank App\Demo Bank App\bin\Debug\netcoreapp3.1\DemoBankLibrary.dll
+C:\Users\Kufreabasi Ita\Desktop\Coding\demo-banking-app\Demo Bank App\Demo Bank App\bin\Debug\netcoreapp3.1\DemoBankLibrary.pdb
+C:\Users\Kufreabasi Ita\Desktop\Coding\demo-banking-app\Demo Bank App\Demo Bank App\obj\Debug\netcoreapp3.1\Demo Bank App.csproj.CopyComplete

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Sui7nkrsDHInxY1sxVD7SYKw7zjVZOilKsOvjfl+WKE5wVbf19wDs4KaRKpVyBcvqnLRcE9jkVLLu5hfmQCvkg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Kufreabasi Ita\\Desktop\\Coding\\bankapp_refactored_week4-\\DemoBankLibrary\\DemoBankLibrary.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Kufreabasi Ita\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Kufreabasi Ita\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

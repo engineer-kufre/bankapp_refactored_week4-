@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Demo Bank App/1.0.0": {
+        "dependencies": {
+          "DemoBankLibrary": "1.0.0"
+        },
+        "runtime": {
+          "Demo Bank App.dll": {}
+        }
+      },
+      "DemoBankLibrary/1.0.0": {
+        "runtime": {
+          "DemoBankLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Demo Bank App/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DemoBankLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
