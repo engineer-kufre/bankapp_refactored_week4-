@@ -7,7 +7,7 @@ namespace DemoBankLibraryTests
     public class AuthTests
     {
         [Test]
-        public void RegisterTest()
+        public void RegisterTest() //tests user signup method and passes if isSignedUp equals True
         {
             //Arrange
             string fullName = "Adam Eve";
@@ -23,7 +23,7 @@ namespace DemoBankLibraryTests
         }
 
         [Test]
-        public void LoginAuthenticationTest()
+        public void LoginAuthenticationTest() //tests user login method and passes if customerName attribute of the new customer object matches fullName argument
         {
             //Arrange
             string fullName = "Adam Eve";

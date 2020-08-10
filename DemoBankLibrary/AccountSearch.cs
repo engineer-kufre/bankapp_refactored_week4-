@@ -6,27 +6,19 @@ namespace DemoBankLibrary
 {
     public class AccountSearch
     {
+        //method receives an account number from the user, searches amongst his accounts and displays account balance if a match is found
         public static void ReturnBalance(Customer activeCustomer)
         {
             bool accountFound = false;
 
             while (accountFound == false)
             {
-                Console.WriteLine($"Here are your accounts, {activeCustomer.CustomerName}:");
-                foreach (var item in activeCustomer.allSavingsAccounts)
-                {
-                    Console.WriteLine($"=> {item.AccountNumber} ({item.AccountType})");
-                }
-
-                foreach (var item in activeCustomer.allCurrentAccounts)
-                {
-                    Console.WriteLine($"=> {item.AccountNumber} ({item.AccountType})");
-                }
+                DisplayUserAccounts(activeCustomer);
 
                 Console.Write("Select account for this transaction by entering its account number: ");
                 string choiceAccount = Console.ReadLine();
 
-                for (int i = 0; i < activeCustomer.allSavingsAccounts.Count; i++)
+                for (int i = 0; i < activeCustomer.allSavingsAccounts.Count; i++)  //search savings accounts
                 {
                     if (activeCustomer.allSavingsAccounts[i].AccountNumber == choiceAccount)
                     {
@@ -35,7 +27,7 @@ namespace DemoBankLibrary
                     }
                 }
 
-                for (int i = 0; i < activeCustomer.allCurrentAccounts.Count; i++)
+                for (int i = 0; i < activeCustomer.allCurrentAccounts.Count; i++) //search current accounts
                 {
                     if (activeCustomer.allCurrentAccounts[i].AccountNumber == choiceAccount)
                     {
@@ -51,52 +43,14 @@ namespace DemoBankLibrary
             }
         }
 
+        //method to search for customer account details match before deposit is made
         public static void Deposits(Customer activeCustomer)
         {
-            bool accountFound = false;
+            SavingsAccount savingsAccount;
+            CurrentAccount currentAccount;
 
-            SavingsAccount savingsDepositAccount = null;
-            CurrentAccount currentDepositAccount = null;
-
-            while (accountFound == false)
-            {
-                Console.WriteLine($"Here are your accounts, {activeCustomer.CustomerName}:");
-                foreach (var item in activeCustomer.allSavingsAccounts)
-                {
-                    Console.WriteLine($"=> {item.AccountNumber} ({item.AccountType})");
-                }
-
-                foreach (var item in activeCustomer.allCurrentAccounts)
-                {
-                    Console.WriteLine($"=> {item.AccountNumber} ({item.AccountType})");
-                }
-
-                Console.Write("Select account for this transaction by entering its account number: ");
-                string choiceAccount = Console.ReadLine();
-
-                for (int i = 0; i < activeCustomer.allSavingsAccounts.Count; i++)
-                {
-                    if (activeCustomer.allSavingsAccounts[i].AccountNumber == choiceAccount)
-                    {
-                        accountFound = true;
-                        savingsDepositAccount = activeCustomer.allSavingsAccounts[i];
-                    }
-                }
-
-                for (int i = 0; i < activeCustomer.allCurrentAccounts.Count; i++)
-                {
-                    if (activeCustomer.allCurrentAccounts[i].AccountNumber == choiceAccount)
-                    {
-                        accountFound = true;
-                        currentDepositAccount = activeCustomer.allCurrentAccounts[i];
-                    }
-                }
-
-                if (accountFound == false)
-                {
-                    Console.WriteLine("Account entered does not exist!");
-                }
-            }
+            //receives account details and confirms validity
+            ConfirmAccount(activeCustomer, out savingsAccount, out currentAccount);
 
             Console.Write("Enter deposit amount: ");
             decimal depositAmount = decimal.Parse(Console.ReadLine());
@@ -104,11 +58,11 @@ namespace DemoBankLibrary
             string depositNote = Console.ReadLine();
             DateTime depositDate = DateTime.Now;
 
-            if (savingsDepositAccount != null)
+            if (savingsAccount != null) //match found
             {
                 try
                 {
-                    savingsDepositAccount.Deposit(depositAmount, depositDate, depositNote);
+                    savingsAccount.Deposit(depositAmount, depositDate, depositNote);
                     Console.WriteLine("Transaction successfull!");
                 }
                 catch (Exception e)
@@ -117,11 +71,11 @@ namespace DemoBankLibrary
                 }
             }
 
-            if (currentDepositAccount != null)
+            if (currentAccount != null) //match found
             {
                 try
                 {
-                    currentDepositAccount.Deposit(depositAmount, depositDate, depositNote);
+                    currentAccount.Deposit(depositAmount, depositDate, depositNote);
                     Console.WriteLine("Transaction successfull!");
                 }
                 catch (Exception e)
@@ -131,53 +85,14 @@ namespace DemoBankLibrary
             }
         }
 
+        //method to search for customer account details match before withdrawal is made
         public static void Withdraws(Customer activeCustomer)
         {
-            bool accountFound = false;
+            SavingsAccount savingsAccount;
+            CurrentAccount currentAccount;
 
-            SavingsAccount savingsWithdrawalAccount = null;
-            CurrentAccount currentWithdrawalAccount = null;
-
-            while (accountFound == false)
-            {
-                Console.WriteLine($"Here are your accounts, {activeCustomer.CustomerName}:");
-
-                foreach (var item in activeCustomer.allSavingsAccounts)
-                {
-                    Console.WriteLine($"=> {item.AccountNumber} ({item.AccountType})");
-                }
-
-                foreach (var item in activeCustomer.allCurrentAccounts)
-                {
-                    Console.WriteLine($"=> {item.AccountNumber} ({item.AccountType})");
-                }
-
-                Console.Write("Select account for this transaction by entering its account number: ");
-                string choiceAccount = Console.ReadLine();
-
-                for (int i = 0; i < activeCustomer.allSavingsAccounts.Count; i++)
-                {
-                    if (activeCustomer.allSavingsAccounts[i].AccountNumber == choiceAccount)
-                    {
-                        accountFound = true;
-                        savingsWithdrawalAccount = activeCustomer.allSavingsAccounts[i];
-                    }
-                }
-
-                for (int i = 0; i < activeCustomer.allCurrentAccounts.Count; i++)
-                {
-                    if (activeCustomer.allCurrentAccounts[i].AccountNumber == choiceAccount)
-                    {
-                        accountFound = true;
-                        currentWithdrawalAccount = activeCustomer.allCurrentAccounts[i];
-                    }
-                }
-
-                if (accountFound == false)
-                {
-                    Console.WriteLine("Account entered does not exist!");
-                }
-            }
+            //receives account details and confirms validity
+            ConfirmAccount(activeCustomer, out savingsAccount, out currentAccount);
 
             Console.Write("Enter withdrawal amount: ");
             decimal withdrawalAmount = decimal.Parse(Console.ReadLine());
@@ -185,11 +100,11 @@ namespace DemoBankLibrary
             string withdrawalNote = Console.ReadLine();
             DateTime withdrawalDate = DateTime.Now;
 
-            if (savingsWithdrawalAccount != null)
+            if (savingsAccount != null) //match found
             {
                 try
                 {
-                    savingsWithdrawalAccount.Withdraw(withdrawalAmount, withdrawalDate, withdrawalNote);
+                    savingsAccount.Withdraw(withdrawalAmount, withdrawalDate, withdrawalNote);
                     Console.WriteLine("Transaction successfull!");
                 }
                 catch (Exception e)
@@ -198,11 +113,11 @@ namespace DemoBankLibrary
                 }
             }
 
-            if (currentWithdrawalAccount != null)
+            if (currentAccount != null) //match found
             {
                 try
                 {
-                    currentWithdrawalAccount.Withdraw(withdrawalAmount, withdrawalDate, withdrawalNote);
+                    currentAccount.Withdraw(withdrawalAmount, withdrawalDate, withdrawalNote);
                     Console.WriteLine("Transaction successfull!");
                 }
                 catch (Exception e)
@@ -212,53 +127,15 @@ namespace DemoBankLibrary
             }
         }
 
+        //method to search for customer and target account details match before transfer is made
         public static void Transfer(Customer activeCustomer)
         {
-            bool accountFound = false;
+            SavingsAccount savingsAccount;
+            CurrentAccount currentAccount;
 
-            SavingsAccount savingsWithdrawalAccount = null;
-            CurrentAccount currentWithdrawalAccount = null;
+            //receives account details and confirms validity
+            ConfirmAccount(activeCustomer, out savingsAccount, out currentAccount);
 
-            while (accountFound == false)
-            {
-                Console.WriteLine($"Here are your accounts, {activeCustomer.CustomerName}:");
-
-                foreach (var item in activeCustomer.allSavingsAccounts)
-                {
-                    Console.WriteLine($"=> {item.AccountNumber} ({item.AccountType})");
-                }
-
-                foreach (var item in activeCustomer.allCurrentAccounts)
-                {
-                    Console.WriteLine($"=> {item.AccountNumber} ({item.AccountType})");
-                }
-
-                Console.Write("Select account for this transaction by entering its account number: ");
-                string choiceAccount = Console.ReadLine();
-
-                for (int i = 0; i < activeCustomer.allSavingsAccounts.Count; i++)
-                {
-                    if (activeCustomer.allSavingsAccounts[i].AccountNumber == choiceAccount)
-                    {
-                        accountFound = true;
-                        savingsWithdrawalAccount = activeCustomer.allSavingsAccounts[i];
-                    }
-                }
-
-                for (int i = 0; i < activeCustomer.allCurrentAccounts.Count; i++)
-                {
-                    if (activeCustomer.allCurrentAccounts[i].AccountNumber == choiceAccount)
-                    {
-                        accountFound = true;
-                        currentWithdrawalAccount = activeCustomer.allCurrentAccounts[i];
-                    }
-                }
-
-                if (accountFound == false)
-                {
-                    Console.WriteLine("Account entered does not exist!");
-                }
-            }
             Console.Write("Enter transfer amount: ");
             decimal transferAmount = decimal.Parse(Console.ReadLine());
             Console.Write("Enter recipient account number: ");
@@ -268,11 +145,11 @@ namespace DemoBankLibrary
             DateTime transferDate = DateTime.Now;
             List<Customer> customersList = Bank.customerProfiles;
 
-            if (savingsWithdrawalAccount != null)
+            if (savingsAccount != null) //match found
             {
                 try
                 {
-                    savingsWithdrawalAccount.Transfer(transferAmount, recipientAccount, transferDate, transferNote, customersList);
+                    savingsAccount.Transfer(transferAmount, recipientAccount, transferDate, transferNote, customersList);
                     Console.WriteLine("Transaction successfull!");
                 }
                 catch (Exception e)
@@ -281,11 +158,11 @@ namespace DemoBankLibrary
                 }
             }
 
-            if (currentWithdrawalAccount != null)
+            if (currentAccount != null) //match found
             {
                 try
                 {
-                    currentWithdrawalAccount.Transfer(transferAmount, recipientAccount, transferDate, transferNote, customersList);
+                    currentAccount.Transfer(transferAmount, recipientAccount, transferDate, transferNote, customersList);
                     Console.WriteLine("Transaction successfull!");
                 }
                 catch (Exception e)
@@ -297,29 +174,53 @@ namespace DemoBankLibrary
 
         public static void Statement(Customer activeCustomer)
         {
+            SavingsAccount savingsAccount;
+            CurrentAccount currentAccount;
+
+            //receives account details and confirms validity
+            ConfirmAccount(activeCustomer, out savingsAccount, out currentAccount);
+
+            if (savingsAccount != null)
+            {
+                savingsAccount.PrintAccountStatement(activeCustomer, savingsAccount);
+            }
+
+            if (currentAccount != null)
+            {
+                currentAccount.PrintAccountStatement(activeCustomer, currentAccount);
+            }
+        }
+
+        //displays user's savings and current accounts
+        private static void DisplayUserAccounts(Customer activeCustomer)
+        {
+            Console.WriteLine($"Here are your accounts, {activeCustomer.CustomerName}:");
+            foreach (var item in activeCustomer.allSavingsAccounts) //displays user's savings accounts
+            {
+                Console.WriteLine($"=> {item.AccountNumber} ({item.AccountType})");
+            }
+
+            foreach (var item in activeCustomer.allCurrentAccounts) //displays user's current accounts
+            {
+                Console.WriteLine($"=> {item.AccountNumber} ({item.AccountType})");
+            }
+        }
+
+        //displays accounts, receives user account number and searches to confirm that account exists
+        private static void ConfirmAccount(Customer activeCustomer, out SavingsAccount savingsAccount, out CurrentAccount currentAccount)
+        {
             bool accountFound = false;
 
-            SavingsAccount savingsAccount = null;
-            CurrentAccount currentAccount = null;
-
+            savingsAccount = null;
+            currentAccount = null;
             while (accountFound == false)
             {
-                Console.WriteLine($"Here are your accounts, {activeCustomer.CustomerName}:");
+                DisplayUserAccounts(activeCustomer);
 
-                foreach (var item in activeCustomer.allSavingsAccounts)
-                {
-                    Console.WriteLine($"=> {item.AccountNumber} ({item.AccountType})");
-                }
-
-                foreach (var item in activeCustomer.allCurrentAccounts)
-                {
-                    Console.WriteLine($"=> {item.AccountNumber} ({item.AccountType})");
-                }
-
-                Console.Write("Select account to view statement: ");
+                Console.Write("Select account an by entering its account number: ");
                 string choiceAccount = Console.ReadLine();
 
-                for (int i = 0; i < activeCustomer.allSavingsAccounts.Count; i++)
+                for (int i = 0; i < activeCustomer.allSavingsAccounts.Count; i++)  //search savings accounts
                 {
                     if (activeCustomer.allSavingsAccounts[i].AccountNumber == choiceAccount)
                     {
@@ -328,7 +229,7 @@ namespace DemoBankLibrary
                     }
                 }
 
-                for (int i = 0; i < activeCustomer.allCurrentAccounts.Count; i++)
+                for (int i = 0; i < activeCustomer.allCurrentAccounts.Count; i++)  //search current accounts
                 {
                     if (activeCustomer.allCurrentAccounts[i].AccountNumber == choiceAccount)
                     {
@@ -340,16 +241,6 @@ namespace DemoBankLibrary
                 if (accountFound == false)
                 {
                     Console.WriteLine("Account entered does not exist!");
-                }
-
-                if (savingsAccount != null)
-                {
-                    savingsAccount.PrintAccountStatement(activeCustomer, savingsAccount);
-                }
-
-                if (currentAccount != null)
-                {
-                    currentAccount.PrintAccountStatement(activeCustomer, currentAccount);
                 }
             }
         }

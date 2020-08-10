@@ -16,7 +16,7 @@ namespace Demo_Bank_App
             bool exitApp = false;
             Customer activeCustomer = null;
 
-            while (activeCustomer == null && exitApp == false)
+            while (activeCustomer == null && exitApp == false) //keeps user in the loop until either logged in or app is exited
             {
                 bool correctSelection = false;
                 string selection = "";
@@ -37,13 +37,13 @@ namespace Demo_Bank_App
 
                 correctSelection = false;
 
-                if (selection.ToUpper() == "X")
+                if (selection.ToUpper() == "X") //user wishes to exit app
                 {
                     exitApp = true;
                 }
 
                 //SIGNUP SECTION
-                if (selection.ToUpper() == "S")
+                if (selection.ToUpper() == "S") //user wishes to signup
                 {
                     Console.Write("Please enter your Fullname: ");
                     string fullName = Console.ReadLine();
@@ -55,7 +55,7 @@ namespace Demo_Bank_App
                     bool passwordMatch = false;
                     string passwordCheck;
 
-                    while (passwordMatch == false)
+                    while (passwordMatch == false) //check for password match
                     {
                         Console.Write("Please reenter your password: ");
                         passwordCheck = Console.ReadLine();
@@ -69,22 +69,20 @@ namespace Demo_Bank_App
                             Console.WriteLine("Passwords do not match!");
                         }
                     }
+
                     //customer signup method call
                     AuthenticationClass.CustomerSignup(fullName, email, password);
                 }
 
                 //LOGIN SECTION
-                
-
                 if (selection.ToUpper() == "L")
                 {
                     //email and password validation for login
                     LoginValidation(ref activeCustomer);
                 }
 
-                while (activeCustomer != null)
+                while (activeCustomer != null) //user kept in loop while still active
                 {
-
                     //all actions a user can take while logged in
                     CustomerLoggedInActivity(ref correctSelection, ref activeCustomer);
                 }
@@ -94,6 +92,7 @@ namespace Demo_Bank_App
         //all actions a user can take while logged in
         private static void CustomerLoggedInActivity(ref bool correctSelection, ref Customer activeCustomer)
         {
+            //checks that the user has no accounts and mandates them to open one to proceed
             if (activeCustomer.allSavingsAccounts.Count == 0 && activeCustomer.allCurrentAccounts.Count == 0)
             {
                 Console.WriteLine("This is your first time here. You are required to create a new account.");
@@ -126,37 +125,37 @@ namespace Demo_Bank_App
 
             correctSelection = false;
 
-            if (choice == "1")
+            if (choice == "1") //user wishes to create a new account
             {
                 Bank.CreateAccount(activeCustomer);
             }
 
-            if (choice == "2")
+            if (choice == "2") // user wishes to make a deposit
             {
                 AccountSearch.Deposits(activeCustomer);
             }
 
-            if (choice == "3")
+            if (choice == "3") // user wishes to make a withdrawal
             {
                 AccountSearch.Withdraws(activeCustomer);
             }
 
-            if (choice == "4")
+            if (choice == "4") // user wishes to make a transfer
             {
                 AccountSearch.Transfer(activeCustomer);
             }
 
-            if (choice == "5")
+            if (choice == "5") // user wishes to view an account balance
             {
                 AccountSearch.ReturnBalance(activeCustomer);
             }
 
-            if (choice == "6")
+            if (choice == "6") // user wishes to view a statement for an account
             {
                 AccountSearch.Statement(activeCustomer);
             }
 
-            if (choice == "7")
+            if (choice == "7") // user wishes to log out
             {
                 activeCustomer = null;
             }
@@ -165,7 +164,7 @@ namespace Demo_Bank_App
         //method for login email and password validation
         private static void LoginValidation(ref Customer activeCustomer)
         {
-            while (activeCustomer == null)
+            while (activeCustomer == null) //user remains in the loop until correct login details are entered
             {
                 Console.Write("Please enter your email: ");
                 string logInEmail = Console.ReadLine();

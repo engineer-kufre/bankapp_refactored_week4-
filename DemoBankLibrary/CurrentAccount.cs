@@ -15,6 +15,7 @@ namespace DemoBankLibrary
             Deposit(initialBalance, DateTime.Now, "Initial Deposit");
         }
 
+        //current account deposit method
         public void Deposit(decimal amount, DateTime date, string note)
         {
             if (depositCount == 0 && amount < 1000)
@@ -34,6 +35,7 @@ namespace DemoBankLibrary
             depositCount++;
         }
 
+        //current account withdraw method
         public void Withdraw(decimal amount, DateTime date, string note)
         {
             if (Balance - amount < 0)
@@ -50,6 +52,7 @@ namespace DemoBankLibrary
             withdrawal.userBalance = Balance;
         }
 
+        //current account transfer method
         public void Transfer(decimal amount, string targetAccount, DateTime date, string note, List<Customer> customers)
         {
             bool targetFound = false;
@@ -59,9 +62,9 @@ namespace DemoBankLibrary
                 throw new ArgumentOutOfRangeException(nameof(amount), "Your transfer amount must be more than $0");
             }
 
-            for (int i = 0; i < customers.Count; i++)
+            for (int i = 0; i < customers.Count; i++) //for each customer
             {
-                for (int j = 0; j < customers[i].allSavingsAccounts.Count; j++)
+                for (int j = 0; j < customers[i].allSavingsAccounts.Count; j++)  //search savings accounts for target account
                 {
                     if (customers[i].allSavingsAccounts[j].AccountNumber == targetAccount)
                     {
@@ -69,7 +72,7 @@ namespace DemoBankLibrary
                         customers[i].allSavingsAccounts[j].Deposit(amount, date, note);
                     }
                 }
-                for (int j = 0; j < customers[i].allCurrentAccounts.Count; j++)
+                for (int j = 0; j < customers[i].allCurrentAccounts.Count; j++)  //search current accounts for target account
                 {
                     if (customers[i].allCurrentAccounts[j].AccountNumber == targetAccount)
                     {

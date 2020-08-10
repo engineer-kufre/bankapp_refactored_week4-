@@ -30,6 +30,7 @@ namespace DemoBankLibrary
             baseAccountNumber++;
         }
 
+        //method for printing savings account statements
         public void PrintAccountStatement(Customer customer, SavingsAccount choiceAccount)
         {
             Console.WriteLine("{0, -25}{1, -20}{2, -18}{3, -15}{4, -15}{5, -30}{6, -15}", "Full Name", "Account Number", "Account Type", "Amount", "Balance", "Note", "Date");
@@ -39,6 +40,7 @@ namespace DemoBankLibrary
             }
         }
 
+        //method for printing current account statements
         public void PrintAccountStatement(Customer customer, CurrentAccount choiceAccount)
         {
             Console.WriteLine("{0, -25}{1, -20}{2, -18}{3, -15}{4, -15}{5, -30}{6, -15}", "Full Name", "Account Number", "Account Type", "Amount", "Balance", "Note", "Date");

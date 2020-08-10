@@ -8,7 +8,7 @@ namespace DemoBankLibraryTests
     public class TransactionTests
     {
         [Test]
-        public void TransactionTest()
+        public void TransactionTest() //tests that the Transaction class constructor works
         {
             //Arrange
             Transaction deposit = null;

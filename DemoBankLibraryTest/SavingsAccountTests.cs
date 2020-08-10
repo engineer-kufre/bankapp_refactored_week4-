@@ -9,14 +9,14 @@ namespace DemoBankLibraryTests
     public class SavingsTests
     {
         [Test]
-        public void InitialDepositBelowAHundredTest()
+        public void InitialDepositBelowAHundredTest() //tests Deposit method and passes if it throws InvalidOperationException for initial deposits less than 100
         {
             //Arrange, Act and Assert
             Assert.Throws<InvalidOperationException>(() => new SavingsAccount(20));
         }
 
         [Test]
-        public void NegativeOrZeroDepositTest()
+        public void NegativeOrZeroDepositTest() //tests Deposit method and passes if it throws ArgumentOutOfRangeException for deposits zero or less
         {
             //Arrange
             SavingsAccount account = new SavingsAccount(500);
@@ -26,7 +26,7 @@ namespace DemoBankLibraryTests
         }
 
         [Test]
-        public void DepositWorksRightTest()
+        public void DepositWorksRightTest() //tests Deposit method and passes if it can track multiple transactions and return account balance accurately
         {
             //Arrange
             SavingsAccount account = new SavingsAccount(500);
@@ -42,7 +42,7 @@ namespace DemoBankLibraryTests
         }
 
         [Test]
-        public void InsufficientBalanceTest()
+        public void InsufficientBalanceTest() //tests Withdraw method and passes if it throws InvalidOperationException for overdraft
         {
             //Arrange
             SavingsAccount account = new SavingsAccount(500);
@@ -52,7 +52,7 @@ namespace DemoBankLibraryTests
         }
 
         [Test]
-        public void NegativeorZeroWithdrawalTest()
+        public void NegativeorZeroWithdrawalTest() //tests Withdraw method and passes if it throws ArgumentOutOfRangeException for withdrawals zero or less
         {
             //Arrange
             SavingsAccount account = new SavingsAccount(500);
@@ -62,7 +62,7 @@ namespace DemoBankLibraryTests
         }
 
         [Test]
-        public void WithdrawalWorksRightTest()
+        public void WithdrawalWorksRightTest() //tests Withdraw method and passes if it can track multiple transactions and return account balance accurately
         {
             //Arrange
             SavingsAccount account = new SavingsAccount(500);
@@ -79,7 +79,7 @@ namespace DemoBankLibraryTests
         }
 
         [Test]
-        public void TransferWorksRightTest()
+        public void TransferWorksRightTest() //tests Transfer method and passes if it can update the sender and receiver account balances accurately
         {
             //Arrange
             List<Customer> customerProfiles = new List<Customer>();

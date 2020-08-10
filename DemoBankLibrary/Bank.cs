@@ -8,12 +8,13 @@ namespace DemoBankLibrary
     {
         public static List<Customer> customerProfiles = new List<Customer>();
 
+        //method to create accounts
         public static void CreateAccount(Customer activeCustomer)
         {
             bool accepted = false;
             string accountChoice = "";
 
-            while (accepted == false)
+            while (accepted == false) //checks for wrong selection entry
             {
                 Console.Write("Enter \"S\" to create a savings account or \"C\" for a current account: ");
                 accountChoice = Console.ReadLine();
@@ -35,7 +36,7 @@ namespace DemoBankLibrary
             }
 
             decimal initial = decimal.Parse(Console.ReadLine());
-            if (accountChoice.ToUpper() == "S")
+            if (accountChoice.ToUpper() == "S") //user wishes to open a savings account
             {
                 try
                 {
@@ -49,7 +50,7 @@ namespace DemoBankLibrary
                 }
             }
 
-            if (accountChoice.ToUpper() == "C")
+            if (accountChoice.ToUpper() == "C") //user wishes to open a current account
             {
                 try
                 {
