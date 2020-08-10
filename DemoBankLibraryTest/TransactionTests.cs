@@ -11,7 +11,7 @@ namespace DemoBankLibraryTests
         public void TransactionTest() //tests that the Transaction class constructor works
         {
             //Arrange
-            Transaction deposit = null;
+            Transaction deposit;
             decimal amount = 5000;
             DateTime date = DateTime.Now;
             string note = "Demo Transaction";
